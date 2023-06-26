@@ -1,28 +1,26 @@
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/grid";
-import "swiper/css/pagination";
-
-import { Grid, Pagination } from "swiper";
-
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/grid'
+import 'swiper/css/pagination'
 
 import slider1 from '../../assets/sliders/slider1.jpg'
 import slider2 from '../../assets/sliders/slider2.jpg'
 
-import categoria1 from '../../assets/categorias/categoria1.jpg';
-import categoria2 from '../../assets/categorias/categoria2.jpg';
-import categoria3 from '../../assets/categorias/categoria3.jpg';
-import categoria4 from '../../assets/categorias/categoria4.jpg';
-import categoria5 from '../../assets/categorias/categoria5.jpg';
+import categoria1 from '../../assets/categorias/categoria1.jpg'
+import categoria2 from '../../assets/categorias/categoria2.jpg'
+import categoria3 from '../../assets/categorias/categoria3.jpg'
+import categoria4 from '../../assets/categorias/categoria4.jpg'
+import categoria5 from '../../assets/categorias/categoria5.jpg'
 
+// @ts-expect-error: Type 'any' has no properties in common with type 'PaginationOptions'
+import { Pagination } from 'swiper'
 
 export const Index = (): JSX.Element => {
   return (
     <>
       <section id="slider">
-        <Swiper pagination={{ dynamicBullets: true, clickable: true, }} modules={[Pagination]} className="swp_slider" loop={true}>
+        <Swiper pagination={{ dynamicBullets: true, clickable: true }} modules={[Pagination]} className="swp_slider" loop={true}>
           <SwiperSlide><img src={slider1} alt="" /></SwiperSlide>
           <SwiperSlide><img src={slider2} alt="" /></SwiperSlide>
         </Swiper>
@@ -32,9 +30,8 @@ export const Index = (): JSX.Element => {
           slidesPerView={4}
           spaceBetween={30}
           pagination={{
-            clickable: true,
+            clickable: true
           }}
-          modules={[Pagination]}
           className="sectCategorias__slide"
         >
           <SwiperSlide>
@@ -99,15 +96,15 @@ export const Index = (): JSX.Element => {
           </SwiperSlide>
         </Swiper>
       </section>
-      <section className="nuevosProductos">
+      {/* <section className="nuevosProductos">
         <Swiper
           slidesPerView={3}
           grid={{
-            rows: 2,
+            rows: 2
           }}
           spaceBetween={30}
           pagination={{
-            clickable: true,
+            clickable: true
           }}
           modules={[Grid, Pagination]}
           className="swiper"
@@ -122,7 +119,7 @@ export const Index = (): JSX.Element => {
           <SwiperSlide>Slide 8</SwiperSlide>
           <SwiperSlide>Slide 9</SwiperSlide>
         </Swiper>
-      </section>
+      </section> */}
     </>
   )
 }
